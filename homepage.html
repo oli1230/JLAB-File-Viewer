@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JLab File Viewer</title>
+	
+		<!-- X3DOM Files -->
+		<link rel="stylesheet" href="x3dom.css">
+		<script src="x3dom-full.js"></script>
+	</head>
+	
+	<body>
+		<!-- Third Circle Button Stuff -->
+		<div id="inf_div">
+			<button id="third_circle_1_button" onclick="information_option()"></button>
+			<img id="third_circle_1" src="photos/third_circle_1.png"></img>
+			<t id="information_text"><b>Info</b></t>
+		</div>
+		<div id="nuc_div">
+			<button id="third_circle_2_button" onclick="nucleon_option()"></button>
+			<img id="third_circle_2" src="photos/third_circle_2.png"></img>
+			<t id="nucleon_text"><b>Nucleon</b></t>
+		</div>
+		<div id="mag_div">
+			<button id="third_circle_3_button" onclick="magnet_option()"></button>
+			<img id="third_circle_3" src="photos/third_circle_3.png"></img>
+			<t id="magnet_text"><b>CLAS-12GeV</b></t>
+		</div>
+		
+		<!-- X3DOM Stuff -->
+		<div  id="x3d">
+			<button id="close_x3d_button" onclick="collapse_x3d()"><img id="close_x3d" src="photos/close_x3d.png"></img></button>
+			<x3d>
+				<scene>
+					<switch id="magnet_switch" whichChoice="1">
+						<inline url="x3d_files/magnet.x3d"></inline>
+					</switch>
+					<switch id="solenoid_switch" whichChoice="1">
+						<inline url="x3d_files/solenoid.x3d"></inline>
+					</switch>
+					<switch id="trajectory_switch" whichChoice="1">
+						<inline url="x3d_files/trajectory.x3d"></inline>
+					</switch>
+					<switch id="tubes_switch" whichChoice="1">
+						<inline url="x3d_files/tubes.x3d"></inline>
+					</switch>
+					<switch id="wires_switch" whichChoice="1">
+						<inline url="x3d_files/wires.x3d"></inline>
+					</switch>
+					
+					<switch id="nucleon_collected_switch" whichChoice="1">
+						<inline url="x3d_files/Nucleon_Collected.x3d"></inline>
+					</switch>
+					<switch id="nucleon_radial_switch" whichChoice="1">
+						<inline url="x3d_files/Nucleon_Radial.x3d"></inline>
+					</switch>
+					<switch id="nucleon_tangential_switch" whichChoice="1">
+						<inline url="x3d_files/Nucleon_Tangential.x3d"></inline>
+					</switch>
+				</scene>
+			</x3d>
+		</div>
+		
+		<!-- File Buttons -->
+		<div id="buttons_mag">
+			<button id="magnet_button" onclick="toggle_magnet_file()">Magnet</div>
+			<button id="solenoid_button" onclick="toggle_solenoid_file()">Solenoid</div>
+			<button id="trajectory_button" onclick="toggle_trajectory_file()">Trajectory</div>
+			<button id="tubes_button" onclick="toggle_tubes_file()">Tubes</div>
+			<button id="wires_button" onclick="toggle_wires_file()">Wires</div>
+		</div>
+		<div id="buttons_nuc">
+			<button id="nucleon_collected_button" onclick="toggle_nucleon_collected_file()">Collected</button>
+			<button id="nucleon_radial_button" onclick="toggle_nucleon_radial_file()">Radial</button>
+			<button id="nucleon_tangential_button" onclick="toggle_nucleon_tangential_file()">Tangential</button>
+		</div>
+		
+		<button id="close_info_button" onclick="close_information()"><img id="close_info" src="photos/close_x3d.png"></img></button>
+		<div id="information_box">
+			<img id="EIC_icon" src="EIC_icon.PNG"></img>
+			<img id="Fem_icon" src="fem_icon.PNG"></img>
+			<p id="description"><br/><br/>This file viewer was developed using X3DOM and vanilla javascript, css, and html.<br/>The 3D files provided are quite large - your browser is having to render a lot of data. Allow a few seconds for loading between button clicks for best usage.<br/><br/><b><u><font size="6">Developed by:</font></u></b></p>
+			<ul id="developers">
+				<li>Polys, Nicholas (Virginia Tech)</li>
+				<li>Stein, Oliver (Virginia Tech)</li>
+				<li>Gutkowski, Nicholas (Virginia Tech)</li>
+				<li>David Heddle (Christopher Newport University)</li>
+				<li>Burkert, Volker (Jefferson Lab)</li>
+				<li>Elouadrhiri, Latifa (Jefferson Lab)</li>
+				<li>Girod, F. X. (University of Connecticut)</li>
+				<li>Schweitzer, Peter (University of Connecticut) </li>
+				<li>Vanderhaeghen, Marc (Johannes Gutenberg University)</li>
+			</ul>
+		</div>
+		
+		<!-- My Files -->
+		<link rel="stylesheet" href="JLabsCSS.css">
+		<script src="JLabsJS.js"></script>
+	</body>
+</html>
